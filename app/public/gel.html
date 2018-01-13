@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+
+      <title>Friend Finder</title>
+      <link rel="icon" href="friendLogo.jpg" type="image/gif" sizes="16x16">
+      <!-- Link to the jQuery Library -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+      <!-- Including Font Awesome Icons -->
+      <script src="https://use.fontawesome.com/b38c8ed4c7.js"></script>
+
+      <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Compiled and minified Materialize CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+      <!-- Compiled and minified Materialize JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
+    </head>
+
+    <style>
+      body {
+          background-image: url("coffeeMUG.jpg");
+          background-repeat: repeat-y;
+          background-attachment: fixed;
+          /*background-position: left; */
+          width: 100%;
+          height:100%;
+
+      }
+      #logo_label {
+          border: 0;
+          height: 37px;
+          width: 42px;
+          position: relative;
+          top: 10px;
+          left: 0px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      $( document ).ready(function() {
+        setTimeout(function(){
+
+        }, 2000);
+
+          $( "#begin" ).on("click", function() {
+            event.preventDefault();
+            console.log( "ready!" );
+            Materialize.toast('Be a friend!', 2000);
+            
+          });  
+      });
+      //place this outside of the doc.ready function cause its not being called
+      //if its inside
+      function myFunction() {
+          window.open("survey.html");
+      }
+      
+      
+    </script>
+
+    <body>
+      
+      <!-- header  -->
+      <nav>
+        <div class="nav-wrapper red lighten-1">
+          <a href="" class="brand-logo"><img id ="logo_label" src="friendLogo.jpg" type="image/gif" sizes="16x16"></img>riend Finder</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="">Log-in</a></li>
+            <li><a href="/api/friends">Friend Bank<span class="new badge">4</span></a></li>
+            <li><a href="">Search</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- end header -->
+
+      <section class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col s13 desc">
+                   <h1>Welcome to Friend Finder</h1>
+               
+                   <h3>Take our survey, find your match.</h3>
+                   <a href="" id="begin" class="btn-large waves-effect waves-light  red lighten-2" onclick="setTimeout(myFunction, 3000);">BEGIN SEARCH</a><br>
+            </div>
+        </div>
+      </section>
+
+      <br><br><br>
+
+      <!-- footer section -->
+      <footer class="page-footer blue-grey">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Friend Finder App</h5>
+              <p class="grey-text text-lighten-4">Friend Finder platform uses survey questions that compares answers from users accross the globe.  To find a match, complete the survey so that it best reflects your search. Good luck! - Friend Finder Team.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="/api/friends">API Friends List</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/IamGiel/friendFinder">GitHub Repo</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            © 2018 Gel TilesMaster Inc.
+            <a class="grey-text text-lighten-4 right" href="https://github.com/IamGiel/friendFinder">Reference Work</a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modal Dialog Displaying Closest Friend Match -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Closest Friend Match</h4>
+          <div class="divider"></div>
+          <h5 id="userMatch"></h5>
+          <img id="userMatchImage" class="materialboxed" width="650" src="">
+        </div>
+        <div class="modal-footer">
+          <a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Fill Again!</a>
+        </div>
+      </div>
+   
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </html>
